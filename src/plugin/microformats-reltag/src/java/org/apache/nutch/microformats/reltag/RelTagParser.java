@@ -46,7 +46,7 @@ import org.apache.hadoop.conf.Configuration;
 
 /**
  * Adds microformat rel-tags of document if found.
- * 
+ *
  * @see <a href="http://www.microformats.org/wiki/rel-tag">
  *      http://www.microformats.org/wiki/rel-tag</a>
  */
@@ -107,7 +107,7 @@ public class RelTagParser implements HtmlParseFilter {
               if ("tag".equalsIgnoreCase(relNode.getNodeValue())) {
                 String tag = parseTag(hrefNode.getNodeValue());
                 if (!StringUtil.isEmpty(tag)) {
-                  if (!tags.contains(tag)) {
+                  if(!tags.contains(tag)){
                     tags.add(tag);
                     LOG.debug("Adding tag: " + tag + " to tag set.");
                   }
